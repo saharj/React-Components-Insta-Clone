@@ -1,4 +1,5 @@
 import React from "react";
+import * as uuid from "uuid";
 import Post from "./Post";
 import "./Posts.css";
 
@@ -11,7 +12,7 @@ const Posts = (props) => {
       {/* Map through the posts array returning a Post component at each iteration */}
       {/* Check the implementation of Post to see what props it requires! */}
       {posts.map((post) => (
-        <Post post={post} likePost={likePost} />
+        <Post key={uuid.v4()} post={post} likePost={likePost} />
       ))}
     </div>
   );
